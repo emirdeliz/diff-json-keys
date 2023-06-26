@@ -1,0 +1,29 @@
+{
+  "TODAY": "Today",
+  "TOTAL_ACTIVITIES": "Total activities",
+  "TOTAL_CONTRACTS": "Total Contracts",
+  "TECH": "Technician",
+  "TECH_ATTACH": "Attach Technician",
+  "TECH_DETAILS": "technician details",
+  "TECH_GROUP": "Tech Group",
+  "TYPE_PROJECT_ITEMS": [
+    {
+      "value": 1,
+      "label": "Strategic",
+      "icon": "fas fa-compass",
+      "color": "info"
+    },
+    {
+      "value": 2,
+      "label": "Improvement",
+      "icon": "fas fa-dumbbell",
+      "color": "purple"
+    },
+    {
+      "value": 3,
+      "label": "Corrective",
+      "icon": "fas fa-wrench",
+      "color": "primary"
+    }
+  ]
+}
