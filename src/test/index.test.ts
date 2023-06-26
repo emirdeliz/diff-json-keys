@@ -40,7 +40,7 @@ describe("Diff keys json", function () {
   });
 
   it("Compare simple json with six diff", function () { 
-    const result = runDiff(example1, example5);
+    const result = runDiff(example5, example1);
     expect(Object.keys(result)).toContain('TECH');
     expect(Object.keys(result)).toContain('TECH_ATTACH');
     expect(Object.keys(result)).toContain('TECH_DETAILS');

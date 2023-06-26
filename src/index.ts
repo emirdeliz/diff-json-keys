@@ -1,6 +1,15 @@
 export function runDiff(json: any = {} as any, jsonDiff: any = {} as any) {
   const firstDiff = runDiffObject(json, jsonDiff);
   const secondDiff = runDiffObject(jsonDiff, json);
+
+  console.log({
+    firstDiff: JSON.stringify(firstDiff)
+  })
+
+  console.log({
+    secondDiff: JSON.stringify(secondDiff)
+  })
+
   return { ...firstDiff, ...secondDiff };
 }
 
@@ -11,7 +20,7 @@ export function runDiffObject(json: any = {} as any, jsonDiff: any = {} as any) 
     const isArrayValue = Array.isArray(value);
 
     if (isArrayValue) {
-      const resultArr = runDiffArray(json[key], jsonDiff[key] || [], key);
+      const resultArr = runDiffArray(json[key], jsonDiff[key] || []);
       if (resultArr.length) {
         result[key] = resultArr;
       }
@@ -20,7 +29,7 @@ export function runDiffObject(json: any = {} as any, jsonDiff: any = {} as any) 
       if (Object.keys(resultObj).length) {
         result[key] = resultObj;
       }
-    } else if (!jsonDiff[key]) {
+    } else if (jsonDiff[key] === undefined) {
       result[key] = value;
     }
     return result;
@@ -28,7 +37,7 @@ export function runDiffObject(json: any = {} as any, jsonDiff: any = {} as any) 
   return diff;
 }
 
-export function runDiffArray(json: any = [], jsonDiff: any = [], key: string) {
+export function runDiffArray(json: any = [], jsonDiff: any = []) {
   const diff = json.reduce(function (result: any, val: any, index: number) { 
     const isObjectValue = checkIsObjectValue(val);
     if (isObjectValue) {
@@ -36,7 +45,7 @@ export function runDiffArray(json: any = [], jsonDiff: any = [], key: string) {
       if (Object.keys(resultObj).length) {
         result.push(resultObj);
       }
-    } else if (!jsonDiff[key]){ 
+    } else if (jsonDiff[index] === undefined) { 
       result.push(val);
     }
     return result;
