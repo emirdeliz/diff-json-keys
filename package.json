@@ -1,11 +1,14 @@
 {
   "name": "diff-json-keys",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "commonjs",
   "description": "Get diff keys from json",
   "main": "index.js",
   "author": "Emir Marques - <emirdeliz@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/emirdeliz/diff-json-keys"
+  },
   "scripts": {
     "test": "jest --clearCache && jest",
     "test:watch": "jest --clearCache && jest --watchAll --runInBand",
