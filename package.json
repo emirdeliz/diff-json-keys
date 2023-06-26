@@ -1,11 +1,12 @@
 {
   "name": "diff-json-keys",
-  "version": "1.0.1",
-  "type": "commonjs",
+  "version": "1.0.2",
+  "type": "module",
   "description": "Get diff keys from json",
   "main": "index.js",
   "author": "Emir Marques - <emirdeliz@gmail.com>",
   "license": "MIT",
+  "keywords": ["json", "diff", "compare", "deep"],
   "repository": {
     "url": "https://github.com/emirdeliz/diff-json-keys"
   },
