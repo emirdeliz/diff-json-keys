@@ -1,15 +1,6 @@
 export function runDiff(json: any = {} as any, jsonDiff: any = {} as any) {
   const firstDiff = runDiffObject(json, jsonDiff);
   const secondDiff = runDiffObject(jsonDiff, json);
-
-  console.log({
-    firstDiff: JSON.stringify(firstDiff)
-  })
-
-  console.log({
-    secondDiff: JSON.stringify(secondDiff)
-  })
-
   return { ...firstDiff, ...secondDiff };
 }
 
