@@ -1,10 +1,14 @@
 {
   "name": "diff-json-keys",
-  "version": "1.0.3",
+  "version": "1.0.11",
   "description": "Get diff keys from json",
-  "main": "index.js",
+  "main": "src/index",
+  "types": "src/index.d.ts",
   "author": "Emir Marques - <emirdeliz@gmail.com>",
   "license": "MIT",
+  "files": [
+    "src"
+  ],
   "keywords": [
     "json",
     "diff",
@@ -18,7 +22,8 @@
     "test": "jest --clearCache && jest",
     "test:watch": "jest --clearCache && jest --watchAll --runInBand",
     "lint:check": "eslint . --ext .ts --fix",
-    "compile": "npx tsc --module commonjs --declaration"
+    "compile": "npx tsc --module commonjs",
+    "pub": "yarn compile && yarn publish"
   },
   "dependencies": {
     "@types/jest": "^29.5.2",
