@@ -54,8 +54,13 @@ describe("Diff keys json", function () {
     expect(result).toEqual({});
   });
 
-  it("Compare simple json with null params", function () {
+  it("Compare big json with null params", function () {
     const result = runDiff(example6, null);
     expect(result).toEqual(example6);
+  });
+
+  it("Compare big json with equals params", function () {
+    const result = runDiff(example6, example6);
+    expect(result).toEqual({});
   });
 });

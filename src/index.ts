@@ -12,7 +12,9 @@ export function runDiffObject(json: any = {} as any, jsonDiff: any = {} as any) 
 
     if (isArrayValue) {
       const resultArr = runDiffArray(json[key], jsonDiff ? jsonDiff[key] || [] : []);
-      result[key] = resultArr;
+      if (resultArr.length || !jsonDiff || jsonDiff[key] === undefined) {
+        result[key] = resultArr;
+      }
     } else if (isObjectValue) { 
       const resultObj = runDiffObject(json[key] || {}, jsonDiff[key] || {});
       if (Object.keys(resultObj).length) {
