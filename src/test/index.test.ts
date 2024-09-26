@@ -3,8 +3,8 @@ import example2 from './__mocks__/example2.json';
 import example3 from './__mocks__/example3.json';
 import example4 from './__mocks__/example4.json';
 import example5 from './__mocks__/example5.json';
+import example6 from './__mocks__/example6.json';
 import { runDiff } from '..';
-
 
 describe("Diff keys json", function () {
   it("Compare simple json no diff", function () {
@@ -52,5 +52,10 @@ describe("Diff keys json", function () {
   it("Compare simple json with undefined params", function () { 
     const result = runDiff(undefined, undefined);
     expect(result).toEqual({});
+  });
+
+  it("Compare simple json with null params", function () {
+    const result = runDiff(example6, null);
+    expect(result).toEqual(example6);
   });
 });
